@@ -4,4 +4,5 @@ version = "0.1.0"
 authors = ["Alex Hamilton <alex.hamilton@ou.edu>"]
 
 [dependencies]
+termion = "1.5.1"
 rand = "0.5.4"
