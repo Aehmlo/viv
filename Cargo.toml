@@ -2,3 +2,6 @@
 name = "viv"
 version = "0.1.0"
 authors = ["Alex Hamilton <alex.hamilton@ou.edu>"]
+
+[dependencies]
+rand = "0.5.4"

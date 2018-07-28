@@ -1,6 +1,8 @@
 use std::collections::HashSet;
 use std::iter::FromIterator;
 
+extern crate rand;
+
 /// Constructs an [index](struct.Index.html).
 ///
 /// ### Usage
@@ -103,9 +105,18 @@ impl Grid {
     ///
     /// ### Notes
     /// The seed, of course, is not truly random, so probably don't use it as an entropy source.
-    /// Specifically, the seed is always a set of 10 or fewer points within 10 √2 units of the origin.
     pub fn generate() -> Self {
-        unimplemented!()
+        let mut grid = Self {
+            living: HashSet::new(),
+        };
+        for i in -50..50 {
+            for j in -20..20 {
+                if rand::random() {
+                    grid.living.insert(index!(i, j));
+                }
+            }
+        }
+        grid
     }
 
     /// Creates a new grid with the given seed.
