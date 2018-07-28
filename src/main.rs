@@ -78,3 +78,9 @@ fn main() {
         }
     }
 }
+
+#[cfg(all(feature = "tui", feature = "web"))]
+compile_error!(
+    "The terminal UI and web UI configurations are mutually exlusive. \
+     Please use either `tui` or `web`, not both, in a single compilation."
+);
