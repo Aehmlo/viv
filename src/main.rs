@@ -104,7 +104,7 @@ mod web {
             canvas.set_width(window().inner_width() as u32);
             canvas.set_height(window().inner_height() as u32);
             let ctx = canvas.get_context::<CanvasRenderingContext2d>().unwrap();
-            ctx.set_fill_style_color("black");
+            ctx.set_fill_style_color("rgb(70, 37, 126)");
             let width = canvas.width().into();
             let height = canvas.height().into();
             ctx.fill_rect(0.0, 0.0, width, height);
@@ -129,7 +129,7 @@ mod web {
                 }
             }
 
-            window().set_timeout(tick(grid), 200);
+            window().set_timeout(tick(grid), 300);
         }
     }
 }
