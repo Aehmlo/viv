@@ -121,10 +121,15 @@ mod web {
             };
             let grid = grid.tick();
             ctx.set_fill_style_color("white");
-            for x in minima.0..maxima.0 {
-                for y in minima.1..maxima.1 {
+            for x in minima.0..=(maxima.0 + 1) {
+                for y in minima.1..=(maxima.1 + 1) {
                     if grid.is_living(&index!(x, y)) {
-                        ctx.fill_rect(WIDTH * ((x - minima.0) as f64), HEIGHT * ((y - minima.1) as f64), WIDTH, HEIGHT);
+                        ctx.fill_rect(
+                            WIDTH * ((x - minima.0) as f64),
+                            HEIGHT * ((y - minima.1) as f64),
+                            WIDTH,
+                            HEIGHT,
+                        );
                     }
                 }
             }
