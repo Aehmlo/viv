@@ -146,7 +146,7 @@ impl Grid {
     /// 4) Dead cells with exactly three living neighbors become living cells.
     pub fn tick(&self) -> Self {
         let mut new = self.clone();
-        for index in self.living.iter() {
+        for index in &self.living {
             let neighbors = self.living_neighbors(*index);
             if neighbors < 2 || neighbors > 3 {
                 new.kill(*index);
@@ -163,7 +163,7 @@ impl Grid {
                 new.unkill(index);
             }
         }
-        return new;
+        new
     }
 
     /// The number of live neighbors of the cell at the given index within the grid.

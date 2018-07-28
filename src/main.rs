@@ -14,8 +14,8 @@ mod term {
     use termion::{cursor, terminal_size};
     use viv::{Grid, Index};
 
-    const DEAD: &'static str = "◼️";
-    const LIVE: &'static str = "◻️";
+    const DEAD: &str = "◼️";
+    const LIVE: &str = "◻️";
     pub const REFRESH_RATE: u64 = 1; // Hz
 
     pub struct Viewport {
