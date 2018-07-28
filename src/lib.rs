@@ -144,7 +144,7 @@ impl Grid {
         for index in self.living
             .iter()
             .flat_map(|index| index.neighbors_vec().into_iter())
-            .filter(|n| !self.living.contains(n))
+            .filter(|n| !self.is_living(n))
         {
             if self.living_neighbors(index) == 3 {
                 new.unkill(index);
@@ -158,8 +158,13 @@ impl Grid {
         index
             .neighbors()
             .iter()
-            .filter(|index| self.living.contains(index))
+            .filter(|index| self.is_living(*index))
             .count()
+    }
+
+    /// Whether the specified cell is living.
+    pub fn is_living(&self, index: &Index) -> bool {
+        self.living.contains(&index)
     }
 
     /// Kills the cell at the given index.
