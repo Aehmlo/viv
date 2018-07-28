@@ -31,8 +31,10 @@ macro_rules! index {
 /// This type is intended to be more-or-less opaque.
 #[derive(Clone, Copy, Debug, Eq, Hash, PartialEq)]
 pub struct Index {
-    x: isize,
-    y: isize,
+    #[doc(hidden)]
+    pub x: isize,
+    #[doc(hidden)]
+    pub y: isize,
 }
 
 impl Index {
