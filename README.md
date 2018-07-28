@@ -21,3 +21,11 @@ The web version uses the excellent [`cargo-web`](https://github.com/koute/cargo-
 ### Notes
 
 Only one of the TUI and web UI may be used at once; if you wish to compile both of them, it is recommended to first deploy the web UI and then run the TUI separately.
+
+## License
+
+`viv` is licensed under [the MIT license](LICENSE).
+
+## Contributing
+
+Contributions are welcome, although I'm uncertain why anybody would care about a silly toy project. If you do decide you want to contribute, please feel free to open an issue or pull request. Bear in mind, of course, the aforementioned licensing (MIT).
